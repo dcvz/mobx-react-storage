@@ -1,6 +1,6 @@
 {
   "name": "mobx-react-storage",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Observable local/device storage",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,7 +19,12 @@
   ],
   "repository": "git@github.com:dcvz/mobx-react-storage.git",
   "author": "David Chavez <david@dcvz.io>",
-  "keywords": ["observable", "storage", "localstorage", "asyncstorage"],
+  "keywords": [
+    "observable",
+    "storage",
+    "localstorage",
+    "asyncstorage"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "mobx": "^4.0.0 || ^5.0.0",
