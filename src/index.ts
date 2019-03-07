@@ -40,6 +40,40 @@ export default class Storage {
     return this.write()
   }
 
+  static appendToArray(key: string, value: any) {
+    if (!key) {
+      throw new Error('Missing key')
+    }
+
+    if (this.get(key) === undefined) {
+      throw new Error('Undefined item')
+    }
+
+    const storedItem = this.get(key).toJS()
+    if (!Array.isArray(storedItem)) {
+      throw new Error('Stored item is not an array')
+    }
+
+    this.set(key, storedItem.concat(value))
+  }
+
+  static removeFromArray(key: string, value: any) {
+    if (!key) {
+      throw new Error('Missing key')
+    }
+
+    if (this.get(key) === undefined) {
+      throw new Error('Undefined item')
+    }
+
+    const storedItem = this.get(key).toJS()
+    if (!Array.isArray(storedItem)) {
+      throw new Error('Stored item is not an array')
+    }
+
+    this.set(key, storedItem.filter(item => item !== value))
+  }
+
   static setFlag(key: string) {
     return this.set(key, 1)
   }
